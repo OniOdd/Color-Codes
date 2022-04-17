@@ -1,0 +1,468 @@
+/* 1. General properties */
+/* 2. Typography */
+/* 3. Navigation Bar */
+/* 4. Dropdown Menu */
+/* 5. Main Content */
+/* 6. Footer */
+/* 7. Test Page */
+/* 8. Media queries */
+
+/* General properties */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap");
+
+:root {
+	--color-headings: #c3c3c3;
+	--color-text: #3f3843;
+	--color-background: #eeeeee;
+	--color-links: #ff543e;
+}
+
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	color: inherit;
+	outline: none;
+	text-decoration: none;
+}
+
+.nav,
+.main__content,
+.footer {
+	max-width: 1240px;
+	margin: 0 auto;
+}
+
+/* Typography */
+
+body {
+	color: var(--color-text);
+
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	font-size: 1.7rem;
+	font-weight: 700;
+
+	letter-spacing: 1px;
+	line-height: 1.2;
+}
+
+h1,
+h2 {
+	color: var(--color-headings);
+	font-size: 1.4rem;
+	margin: 0;
+}
+
+/* Navigation Bar */
+
+.nav {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.nav__logo-link {
+	margin: 1.5rem 3.2rem;
+}
+
+.nav__logo {
+	width: 32px;
+	height: 32px;
+}
+
+.nav__logo-title {
+	display: none;
+	vertical-align: 1rem;
+	padding-left: 1rem;
+}
+
+.nav__list {
+	display: inherit;
+	flex-grow: 1;
+}
+
+.nav__link,
+.nav__link-last {
+	transition: color 0.3s;
+}
+
+.nav__link:hover,
+.nav__link-last:hover,
+.nav__link:focus,
+.nav__link-last:focus {
+	color: var(--color-links);
+}
+
+.nav__item {
+	margin: 0 3.2rem;
+	position: relative;
+}
+
+.nav__svg-container {
+	margin-left: 0.3rem;
+}
+
+.nav__svg {
+	fill: var(--color-headings);
+	width: 10px;
+	transition: transform 0.2s;
+}
+
+.nav__item:hover .nav__svg {
+	transform: rotate(180deg);
+}
+
+.nav__link-last {
+	margin: 0 3.6rem 0 1rem;
+}
+
+/* Dropdown Menu */
+
+.dropdown {
+	position: absolute;
+	left: -30px;
+	z-index: 2;
+
+	padding-top: 3rem;
+}
+
+.dropdown__content {
+	display: none;
+
+	background: #fff;
+	border-radius: 4px;
+	white-space: nowrap;
+
+	padding: 1.4rem;
+}
+
+.dropdown__content a {
+	display: block;
+	padding: 1rem;
+}
+
+.nav__item:hover .dropdown__content {
+	display: block;
+}
+
+/* Main Content */
+
+.main {
+	background: var(--color-background);
+
+	height: 420px;
+	padding-top: 5.2rem;
+}
+
+.main__icons {
+	float: left;
+}
+
+.main__icon {
+	fill: var(--color-headings);
+
+	width: 28px;
+	height: 28px;
+
+	margin-left: 3.4rem;
+	margin-right: 7rem;
+	margin-bottom: 2rem;
+
+	transition: fill 0.5s;
+}
+
+.main__icon:hover,
+.main__icon-link:focus .main__icon {
+	fill: var(--color-text);
+}
+
+.main__content-text {
+	margin-left: 2rem;
+}
+
+.main__title {
+	margin-bottom: 1rem;
+	text-transform: uppercase;
+}
+
+.main__text {
+	margin-top: 0;
+
+	font-size: 3.4rem;
+	width: 42ch;
+}
+
+/* Footer */
+
+.footer {
+	padding: 0 3rem;
+}
+
+.footer__block-1,
+.footer__block-2 {
+	margin-top: 2rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.footer__section-1,
+.footer__section-1 *,
+.footer__section-2,
+.footer__section-2 *,
+.footer__section-3,
+.footer__section-3 * {
+	margin-left: 1.4rem;
+}
+
+.footer__block-1 span {
+	font-weight: 900;
+}
+
+.footer__block-1 h2 {
+	padding-top: 0.3rem;
+}
+
+.box {
+	width: 50px;
+	height: 27px;
+}
+
+.box--group {
+	border-radius: 3px;
+	margin-left: 2rem;
+	overflow: hidden;
+}
+
+.box--info {
+	background: #b5b5b5;
+	border-radius: 3px;
+
+	width: 55px;
+	height: 36px;
+
+	font-size: 1.5rem;
+	justify-content: center;
+}
+
+.box--color-1 {
+	background: #96bac6;
+	border-radius: 3px;
+}
+
+.box--color-2 {
+	background: #bcd491;
+}
+
+.box--color-3 {
+	background: #d9a725;
+}
+
+.box--color-4 {
+	background: #db4c34;
+}
+
+.box--color-5 {
+	background: #a90935;
+}
+
+.box--color-6 {
+	background: #7b0f36;
+}
+
+.box--color-7 {
+	background: #4b163b;
+}
+
+/* Test Page */
+
+.container {
+	flex-direction: column;
+	justify-content: center;
+
+	height: 100vh;
+	text-align: center;
+	padding: 0 2rem;
+}
+
+.container__title {
+	font-weight: 900;
+	font-size: 5rem;
+
+	text-shadow: 0.2rem 0.2rem #000;
+
+	letter-spacing: 6px;
+	word-spacing: 1.5rem;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 1202px) {
+	.nav__item {
+		margin: 0 1rem;
+	}
+
+	.main__icon {
+		margin-right: 4rem;
+	}
+}
+
+@media screen and (max-width: 868px) {
+
+	header .nav,
+	.nav__link-last,
+	.nav__logo-link {
+		display: block;
+	}
+
+	.nav__item,
+	.nav__link-last {
+		margin: 1rem 3.2rem;
+	}
+
+	.nav__link {
+		display: block;
+		padding-bottom: 1rem;
+	}
+
+	.nav__logo-title {
+		display: inline;
+	}
+
+	.nav__item {
+		border-bottom: 1px solid #dadada;
+		overflow: hidden;
+	}
+
+	.nav__item:hover .nav__svg {
+		transform: rotate(-90deg);
+	}
+
+	.dropdown {
+		position: relative;
+		top: -20px;
+		left: 100px;
+
+		padding: 0;
+	}
+
+	.main {
+		height: auto;
+		padding-top: 3rem;
+	}
+
+	.main__content {
+		margin: 0;
+		overflow: hidden;
+	}
+
+	.main__text {
+		width: 100%;
+		padding-right: 3rem;
+	}
+
+	.footer {
+		margin-bottom: 1.5rem;
+	}
+}
+
+@media screen and (max-width: 748px) {
+	.main__text {
+		font-size: 3.1rem;
+		padding-left: 3rem;
+	}
+}
+
+@media screen and (max-width: 660px) {
+
+	.footer__block-1,
+	.footer__block-2 {
+		flex-direction: column;
+	}
+
+	.box--group {
+		margin: 0;
+	}
+
+	.box--color-1,
+	.footer__section-1,
+	.footer__section-2,
+	.box--info {
+		margin-bottom: 1rem;
+	}
+}
+
+@media screen and (max-width: 619px) {
+	.main {
+		padding-top: 2rem;
+	}
+
+	.main__icons {
+		display: flex;
+		justify-content: center;
+		float: none;
+	}
+
+	.main__icon {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.main__icon-container {
+		padding-right: 8rem;
+	}
+
+	.main__icon-container:last-child {
+		padding-right: 0;
+	}
+
+	.main__title {
+		padding-left: 3rem;
+	}
+
+	.main__text {
+		font-size: 2.4rem;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.main__icon-container {
+		padding-right: 6rem;
+	}
+}
+
+@media screen and (max-width: 390px) {
+	.dropdown {
+		left: 20px;
+	}
+
+	.dropdown__content {
+		background: none;
+		padding-top: 2.5rem;
+		padding-bottom: 0;
+	}
+
+	.main__icon-container {
+		padding-right: 4rem;
+	}
+}
+
+@media screen and (max-width: 340px) {
+	.container__title {
+		font-size: 4rem;
+	}
+}
